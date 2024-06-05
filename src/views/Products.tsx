@@ -8,6 +8,11 @@ export async function loader() {
   return products;
 }
 
+export async function action() {
+  console.log("desde action de actualizar");
+  return {};
+}
+
 const Products = () => {
   const products = useLoaderData() as Product[];
   return (

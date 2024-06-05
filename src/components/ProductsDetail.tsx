@@ -30,7 +30,18 @@ const ProductsDetail = ({ product }: ProductDetailProps) => {
         {formatCurrency(product.price)}
       </td>
       <td className="p-3 text-lg text-gray-800">
-        {isAvailability ? "Disponible" : "No disponible"}
+        <form method="POST">
+          <button
+            type="button"
+            name="availability"
+            value={product.availability.toString()}
+            className={`${
+              isAvailability ? " text-black" : " text-red-800"
+            } rounded-lg p-2 text-xs uppercase font-bold w-full border border-black-100 hover:cursor-pointer`}
+          >
+            {isAvailability ? "Disponible" : "No disponible"}
+          </button>
+        </form>
       </td>
       <td className="p-3 text-lg text-gray-800 ">
         <div className="flex gap-2 items-center">
